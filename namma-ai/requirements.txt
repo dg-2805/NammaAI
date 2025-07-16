@@ -1,0 +1,9 @@
+google-generativeai
+langchain
+langchain-openai
+langchain-community
+chromadb
+duckduckgo-search
+python-dotenv
+PyMuPDF
+tqdm
