@@ -5,7 +5,7 @@ def detect_persona(user_input: str) -> Literal["tourist", "resident", "unknown"]
         "weekend", "visiting", "visit", "2 days", "short trip", "sightseeing", "palace", "museum", "tourist", "attraction", "explore", "holiday", "trip", "next week", "this week", "see", "places to see", "things to do"
     ]
     resident_keywords = [
-        "moving", "relocating", "relocate", "shift", "shifting", "job", "work", "flat", "apartment", "rent", "stay", "living", "settle", "settling", "resident", "permanent", "long term", "next month", "i am shifting", "i am moving", "i am relocating"
+        "moving", "relocating", "relocate", "shift", "shifting", "job", "work", "flat", "apartment", "rent", "stay", "living", "settle", "settling", "resident", "permanent", "long term", "next month", "i am shifting", "i am moving", "i am relocating", "move there", "move", "next year", "planning to move", "want to move", "thinking of moving"
     ]
 
     input_lower = user_input.lower()

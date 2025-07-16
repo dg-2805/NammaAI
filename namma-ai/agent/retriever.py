@@ -1,7 +1,7 @@
 import os
 from langchain_community.document_loaders import TextLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.vectorstores import Chroma
 from dotenv import load_dotenv
 from agent.utils import extract_pdf_to_txt
@@ -22,7 +22,6 @@ def load_vector_store():
 
     embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
     vectordb = Chroma.from_documents(chunks, embedding=embeddings, persist_directory=os.path.normpath(os.path.join(base_dir, '../data/vector_store')))
-    vectordb.persist()
     return vectordb
 
 def query_guide(query: str, vectordb, k=5):

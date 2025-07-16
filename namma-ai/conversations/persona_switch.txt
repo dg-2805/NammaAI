@@ -1,4 +1,63 @@
-# You: I'm here for the weekend. Any Insta-worthy cafes?
+**PERSONA SWITCH SESSION - Demo Conversation**
+
+You: I'm here for the weekend. Any Insta-worthy cafes?
+
+🧠 NammaAI (tourist): Perfect weekend vibes! 📸☕️
+
+According to recent web search: Third Wave Coffee in Indiranagar has that minimalist aesthetic - great for flat lay photos! 
+
+From the city guide: Koshy's is a heritage cafe (since 1940s) with vintage charm, while Toit has industrial-chic interiors.
+
+Try The Hole in the Wall Cafe in Koramangala - quirky graffiti walls and great lighting!
+
+*Namaskara* (Hello) and happy weekend exploring! ✨
+
+---
+
+You: Actually, I'm also thinking of moving here next year. How's Indiranagar for living?
+
+🧠 NammaAI (resident): Ah, switching to resident mode! 🏡 Indiranagar is premium but practical:
+
+**Living in Indiranagar:**
+According to recent updates: 1BHK costs ₹30-45K, 2BHK around ₹45-65K. Pricey but worth it for the location.
+
+**Pros:**
+- Metro connectivity (Purple Line)
+- Walkable neighborhood with restaurants/cafes
+- Good for working professionals
+- Safe for women, even late hours
+
+**Cons:**
+- High rent compared to other areas
+- Traffic on 100 Feet Road can be crazy
+- Parking is a nightmare
+
+**Alternative:** Try Koramangala - similar vibe, slightly cheaper
+
+*Dhanyavadagalu* (Thank you) for considering Bangalore as home! 🏙️
+
+---
+
+You: What about the commute to Electronic City from Indiranagar?
+
+🧠 NammaAI (resident): Ooof, that's the classic Bangalore mistake! 😅
+
+**The Reality:**
+According to the city guide: Electronic City is South Bangalore, Indiranagar is East-Central. Distance: 25-30 km.
+
+**Commute Hell:**
+- Car: 1.5-2 hours in peak traffic (7-10 AM, 6-9 PM)
+- Public transport: 2+ hours (Metro + bus combination)
+- Bangalore traffic is no joke on this route
+
+**Better Options for Electronic City:**
+- Koramangala/BTM Layout: 30-45 min commute
+- Bommanahalli: 15-20 min
+- HSR Layout: 20-30 min
+
+My advice: Don't do Indiranagar → Electronic City daily. Your sanity will thank you!
+
+*Namaskara* (Hello) to better commute planning! 🚗💨u: I'm here for the weekend. Any Insta-worthy cafes?
 # Agent: Definitely! Try Third Wave Coffee in Indiranagar — great lattes and aesthetic vibes.
 # You: Actually, I'm also thinking of moving here next year.
 # Agent: In that case, Indiranagar’s also great for living. Slightly pricey (₹30–45K 1BHK) but safe, upscale, and metro-connected.

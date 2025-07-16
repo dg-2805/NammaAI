@@ -1,2 +1,54 @@
-# You: I'm relocating to Bangalore for work at Manyata Tech Park. Where should I stay?
-# Agent: Welcome! Check out Hebbal or RT Nagar — close to Manyata, 2BHK around ₹25–35K/month. Great ACT internet, and commute is 15–20 min by two-wheeler.
+**RESIDENT SESSION - Demo Conversation**
+
+You: I'm relocating to Bangalore for work at Manyata Tech Park. Where should I stay?
+
+🧠 NammaAI (resident): Welcome to Bangalore! 🏙️ For Manyata Tech Park, here's the practical breakdown:
+
+**Best Neighborhoods:**
+According to the city guide: Hebbal and RT Nagar are closest - 15-20 min commute by bike/car.
+
+Recent web search updates: 2BHK rent ranges ₹25-35K in Hebbal, ₹20-30K in RT Nagar. Sahakara Nagar is another option - slightly further but more affordable.
+
+**Practical Tips:**
+- ACT Fibernet has excellent coverage in these areas
+- Avoid Electronic City direction - opposite traffic flow
+- Consider Yelahanka if you want a house vs apartment
+
+*Namaskara* (Hello) and welcome to your new home! 🏡
+
+---
+
+You: What about internet providers and mobile connections?
+
+🧠 NammaAI (resident): Essential utilities sorted! 💻📱
+
+**Internet (Priority rankings):**
+From my knowledge: ACT Fibernet is #1 choice - reliable, good speeds (100-300 Mbps plans). Airtel Xstream is backup option.
+
+**Mobile Connections:**
+According to recent updates: Airtel has best coverage, Jio is cost-effective. VI/Vodafone okay but network issues in some areas.
+
+**Getting connections:**
+- Internet: 2-3 days installation after booking
+- Mobile: Visit nearest store with address proof
+- Tip: Get postpaid for better customer service
+
+*Dhanyavadagalu* (Thank you) for choosing Bangalore! 📡
+
+---
+
+You: How much should I budget for monthly expenses?
+
+🧠 NammaAI (resident): Here's the realistic monthly budget breakdown 💰
+
+**Housing:** ₹25-35K (2BHK in good areas)
+**Food:** ₹8-12K (mix of home cooking + eating out)
+**Transportation:** ₹3-5K (fuel/metro + occasional Uber)
+**Utilities:** ₹2-3K (electricity + water + internet)
+**Miscellaneous:** ₹5-8K (shopping, entertainment, gym)
+
+**Total:** ₹43-63K/month for comfortable living
+
+According to the city guide: Bangalore cost of living is 20-30% lower than Mumbai/Delhi but higher than other South Indian cities.
+
+*Namaskara* (Hello) to your new budget-friendly life! 💼
