@@ -11,3 +11,4 @@ tqdm
 google-search-results
 beautifulsoup4
 requests
+agno
