@@ -3,6 +3,13 @@
 **NammaAI** is an adaptive AI agent designed to assist both **tourists** and **new residents** in navigating Bangalore. Built using the **Agno framework**, it features robust persona detection, session tracking, and hybrid information retrieval using both static city guides and live web data.
 
 ---
+> ⚠️ **Developer Note**
+>
+> - For best results, use **`main.py`** or **`main_with_sessions.py`**. These are the most stable and well-structured versions of the agent logic.
+> - `namma_agent.py` was a **last-minute AGNO integration** and may not reflect clean architecture.
+> - `main_weather.py` adds real-time weather support (OpenWeatherMap API) and is kept separate as a **bonus feature** to preserve the core logic.
+
+---
 
 ## 🎯 Problem Statement
 
@@ -220,3 +227,64 @@ switch to tourist mode
 
 **Built with ❤️ for Namma Bengaluru.**
 *Namma Bengaluru. Namma AI!*
+
+## Features
+- Persona-aware answers for tourists and residents
+- PDF (city guide) as primary knowledge source, web search as supplement
+- Real-time weather integration (see below)
+- Kannada phrases in all responses (including fallback)
+- "Bangalore Survival Kit" and other special tips
+- Robust fallback logic if LLM is unavailable
+
+## Usage
+
+### Standard CLI
+Run:
+```
+python main.py
+```
+
+### CLI with Real-Time Weather
+Run:
+```
+python main_weather.py
+```
+
+#### Weather API Setup
+- Get a free API key from [OpenWeatherMap](https://openweathermap.org/api)
+- Set your API key in your environment:
+  - **Linux/macOS:**
+    ```
+    export OPENWEATHER_API_KEY=your_api_key_here
+    ```
+  - **Windows CMD:**
+    ```
+    set OPENWEATHER_API_KEY=your_api_key_here
+    ```
+  - **Windows PowerShell:**
+    ```
+    $env:OPENWEATHER_API_KEY="your_api_key_here"
+    ```
+- The agent will automatically blend real-time weather info into answers if your query is about weather, rain, temperature, etc.
+
+### Special Features
+- **Kannada phrases:** Every answer (including fallback) ends with a Kannada phrase and translation.
+- **Bangalore Survival Kit:** Ask for "survival kit" to get a summary of essential tips for new arrivals.
+- **Fallbacks:** If the LLM (Gemini) is unavailable, you get a concise, relevant extract from the city guide, not a generic error.
+- **Web search:** For current/dynamic info, web search is triggered and blended with PDF info by the LLM.
+
+### Example Queries
+- "Tell me about Lalbagh Botanical Garden"
+- "How to negotiate with auto rickshaw drivers?"
+- "What's the weather in Bangalore today?"
+- "Give me a Bangalore survival kit"
+- "Any tech meetups in Bangalore this week?"
+
+## Developer Notes
+- All entry points use the same core agent logic for consistency.
+- To add more special commands, see the start of `generate_response` in `agent/agent.py`.
+- For fallback logic, see the end of `generate_response` in `agent/agent.py`.
+
+---
+
+For more details, see the code and comments in the `namma-ai/` directory.

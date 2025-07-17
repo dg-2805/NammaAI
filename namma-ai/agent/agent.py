@@ -77,6 +77,24 @@ def generate_response(user_input: str, session_persona: Optional[str] = None, co
     Returns:
         Tuple of (response_text, detected_persona)
     """
+    # Special static response for 'survival kit' command only
+    lower_input = user_input.lower()
+    if 'survival kit' in lower_input:
+        kit = (
+            "Bangalore Survival Kit:\n"
+            "- Carry a light rain jacket or umbrella (monsoon: June–September).\n"
+            "- Download Namma Metro & BMTC apps for transit.\n"
+            "- Use UPI apps (PhonePe, Google Pay) for cashless payments.\n"
+            "- Learn a few Kannada phrases: 'Namaskara' (Hello), 'Meter haaki' (Turn on the meter).\n"
+            "- Bargain at markets, but be polite!\n"
+            "- Try filter coffee, idli, dosa, and street food.\n"
+            "- For tech events, check Meetup.com, HackerEarth, and local coworking spaces.\n"
+            "- Beware of auto drivers refusing meter—insist on 'Meter haaki'!\n"
+            "- Weather: Mornings are cool, afternoons can be hot, evenings pleasant.\n"
+            "- Emergency: Dial 100 (police), 108 (ambulance).\n"
+            "\nKannada phrase: Namaskara (Hello)"
+        )
+        return kit, session_persona or 'tourist'
     explicit = explicit_persona_switch(user_input)
     if explicit:
         persona = explicit
@@ -96,6 +114,17 @@ def generate_response(user_input: str, session_persona: Optional[str] = None, co
     prompt = get_prompt(persona, context, web_info, user_input, conversation_history)
     response = generate_response_gemini(prompt)
     if response == "__LLM_ERROR__":
+        # Expanded Kannada phrases for fallback
+        kannada_phrases = [
+            "Namaskara (Hello)",
+            "Dhanyavadagalu (Thank you)",
+            "Meter haaki (Turn on the meter)",
+            "Hodeega payana (Safe journey)",
+            "Olleya dina (Have a good day)",
+            "Nimma hesaru enu? (What is your name?)",
+            "Yelli ide? (Where is it?)",
+            "Sakath aagide! (It's awesome!)"
+        ]
         # Extract main keywords from user_input (longest word > 3 chars, or all words > 3 chars)
         keywords = [w for w in re.findall(r'\w+', user_input) if len(w) > 3]
         # Split the chunk into sentences
@@ -108,11 +137,6 @@ def generate_response(user_input: str, session_persona: Optional[str] = None, co
         # Limit to 2-3 sentences for brevity
         short_answer = ' '.join(relevant[:3]).strip()
         fallback = short_answer or "Sorry, no relevant information found in the city guide."
-        kannada_phrases = [
-            "Namaskara (Hello)",
-            "Dhanyavadagalu (Thank you)",
-            "Meter haaki (Turn on the meter)"
-        ]
         phrase = random.choice(kannada_phrases)
         fallback_msg = f"The city guide states: {fallback}\n\nKannada phrase: {phrase}"
         return fallback_msg, persona
