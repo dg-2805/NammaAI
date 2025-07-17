@@ -357,5 +357,3 @@ $env:OPENWEATHER_API_KEY="your_api_key_here"
 ---
 
 For more details, see the code and comments in the `namma-ai/` directory.
-
-```
