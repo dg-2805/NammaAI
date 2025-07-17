@@ -1,3 +1,18 @@
+"""
+NammaAI Main Application with Session Management
+
+Purpose: Enhanced version of main.py that includes session token functionality.
+Allows users to save and restore conversation sessions with persona and history persistence.
+
+Features:
+- Session token generation for conversation persistence
+- Persona and conversation history restoration
+- Enhanced user experience with session management
+- Compatible with the core NammaAI agent system
+
+Usage: python main_with_sessions.py
+"""
+
 from agent.agent import generate_response
 from session_manager import SessionManager
 

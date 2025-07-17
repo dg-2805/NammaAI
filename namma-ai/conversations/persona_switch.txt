@@ -1,53 +1,141 @@
-**PERSONA SWITCH SESSION - Demo Conversation**
+**PERSONA SWITCHING SESSION - Complete Demo Conversation**
+**Scenario: User transitions from tourist query to resident planning**
 
 You: I'm here for the weekend. Any Insta-worthy cafes?
 
 🧠 NammaAI (tourist): Perfect weekend vibes! 📸☕️
 
-According to recent web search: Third Wave Coffee in Indiranagar has that minimalist aesthetic - great for flat lay photos! 
+Based on current web search: **Third Wave Coffee** in Indiranagar has that minimalist aesthetic - exposed brick, industrial lighting, perfect for flat lay photos! 
 
-From the city guide: Koshy's is a heritage cafe (since 1940s) with vintage charm, while Toit has industrial-chic interiors.
+From the 2023 city guide: **Koshy's** is a heritage cafe (since 1940s) with vintage charm and old Bangalore character, while **Toit** has industrial-chic interiors with visible brewing tanks.
 
-Try The Hole in the Wall Cafe in Koramangala - quirky graffiti walls and great lighting!
+Try **The Hole in the Wall Cafe** in Koramangala - quirky graffiti walls, neon lighting, and great boomerang video spots!
 
-*Namaskara* (Hello) and happy weekend exploring! ✨
+**Photo timing tip:** Visit between 4-6 PM for that golden hour lighting filtering through windows!
 
----
-
-You: Actually, I'm also thinking of moving here next year. How's Indiranagar for living?
-
-🧠 NammaAI (resident): Ah, switching to resident mode! 🏡 Indiranagar is premium but practical:
-
-**Living in Indiranagar:**
-According to recent updates: 1BHK costs ₹30-45K, 2BHK around ₹45-65K. Pricey but worth it for the location.
-
-**Pros:**
-- Metro connectivity (Purple Line)
-- Walkable neighborhood with restaurants/cafes
-- Good for working professionals
-- Safe for women, even late hours
-
-**Cons:**
-- High rent compared to other areas
-- Traffic on 100 Feet Road can be crazy
-- Parking is a nightmare
-
-**Alternative:** Try Koramangala - similar vibe, slightly cheaper
-
-*Dhanyavadagalu* (Thank you) for considering Bangalore as home! 🏙️
+*Namaskara* (Hello) and happy weekend cafe hopping! ✨
 
 ---
 
-You: What about the commute to Electronic City from Indiranagar?
+You: Actually, I'm also thinking of moving here next year for work. How's Indiranagar for living long-term?
 
-🧠 NammaAI (resident): Ooof, that's the classic Bangalore mistake! 😅
+🧠 NammaAI (resident): Ah, planning ahead! Smart move! 🏡 Indiranagar is premium but let me give you the realistic resident perspective:
 
-**The Reality:**
-According to the city guide: Electronic City is South Bangalore, Indiranagar is East-Central. Distance: 25-30 km.
+**Living in Indiranagar - The Complete Picture:**
 
-**Commute Hell:**
-- Car: 1.5-2 hours in peak traffic (7-10 AM, 6-9 PM)
-- Public transport: 2+ hours (Metro + bus combination)
+**Rental costs** (current market rates):
+- 1BHK: ₹30-45K/month
+- 2BHK: ₹45-65K/month
+- **Deposit:** Usually 10 months advance
+
+**Resident Pros:**
+- Metro connectivity (Purple Line) - excellent for daily commute
+- Walkable neighborhood - groceries, restaurants, banks within walking distance
+- Safety factor - well-lit streets, good for women even at night
+- Social scene - easy to make friends, active expat community
+
+**Resident Cons:**
+- High cost of living compared to other areas
+- **Traffic nightmare** on 100 Feet Road during peak hours
+- Parking is scarce and expensive (₹2000-3000/month for car parking)
+- Noise levels high due to nightlife (if you're a light sleeper)
+
+**Alternative suggestion for residents:** Koramangala offers similar vibe at 20-30% lower cost, or Whitefield if your office is in tech corridor.
+
+*Dhanyavadagalu* (Thank you) for considering Bangalore as your future home! 🏙️
+
+---
+
+You: What about the commute to Electronic City from Indiranagar? My company might be there.
+
+🧠 NammaAI (resident): Ooof, that's the classic Bangalore newbie mistake! 😅 Let me save you from commute hell:
+
+**The Brutal Reality:**
+From city planning data: Electronic City is South Bangalore, Indiranagar is East-Central. Distance: 25-30 km but it's not about distance, it's about traffic direction.
+
+**Daily Commute Nightmare:**
+- **Car:** 1.5-2 hours in peak traffic (7-10 AM, 6-9 PM)
+- **Public transport:** 2+ hours (Metro to Majestic + Volvo bus + BMTC)
+- **Bike:** Slightly faster but risky in heavy traffic, 1-1.5 hours
+- **Cost:** ₹150-200 daily in fuel + tolls
+
+**Why it's problematic:**
+You'll be traveling AGAINST traffic flow - Electronic City employees live in South Bangalore (Jayanagar, BTM Layout, Bommanahalli). Living in Indiranagar means swimming upstream daily.
+
+**Resident-friendly alternatives if working in Electronic City:**
+- **BTM Layout:** 15-20 min commute, ₹20-30K rent for 2BHK
+- **Bommanahalli:** Close to office, developing area, ₹18-25K rent
+- **JP Nagar:** Established area, metro connectivity, ₹25-35K rent
+
+**Better plan:** If you love Indiranagar vibe, look for jobs in Whitefield/Marathahalli tech corridor instead - much better commute from East Bangalore.
+
+*Hage maadabeda* (Don't do like that) - learn from others' mistakes! 🚗💔
+
+---
+
+You: Switch to tourist mode - what are some unique experiences only Bangalore offers?
+
+🧠 NammaAI (tourist): Switching to exploration mode! Bangalore has some truly unique experiences you won't find elsewhere! 🌟
+
+**Uniquely Bangalore Experiences:**
+
+**The Garden City Legacy:**
+From the city guide: **Lalbagh's Rock Formation** - 3000 million years old! It's older than life on Earth. Climb it during sunset for incredible city views and geological wonder.
+
+**Aviation Heritage:**
+**HAL Aerospace Museum** - See the first Indian-made aircraft, fighter jets, and aviation history. Very few cities have this level of aerospace heritage!
+
+**Microbrewery Capital:**
+Bangalore pioneered India's craft beer culture! **Toit, Arbor, Brewsky** - try locally brewed beers you can't get anywhere else in India. The Basmati Blonde at Toit is legendary!
+
+**Tech Culture Immersion:**
+Visit **Koramangala Startup Cafes** - work alongside India's next unicorn founders. The energy is infectious, and you might witness the next big idea being born over coffee!
+
+**Bangalore's Weather Magic:**
+**Nandi Hills sunrise trip** (1.5 hours drive) - at 4800 feet altitude, you'll experience the famous Bangalore weather at its peak. Pack a jacket even in summer!
+
+**Cultural Fusion:**
+**Rangoli Metro Arts Centre** - see traditional South Indian performing arts in ultra-modern settings. This cultural bridge is very Bangalore!
+
+**Street Food with a Twist:**
+**Thindi Beedi (Food Street)** - traditional South Indian street food but with Bangalore's cosmopolitan twist. Try masala pani puri with a tech crowd!
+
+*Bangalore nanna guru* (Bangalore is my teacher) - you'll learn something new every day! 🎓
+
+---
+
+You: I want to experience the real local culture, not just tourist spots.
+
+🧠 NammaAI (tourist): Now we're talking! Real Bangalore experiences that locals love! 🏙️❤️
+
+**Authentic Local Experiences:**
+
+**Morning Rituals:**
+Join the **Cubbon Park morning walkers** (5:30-7 AM) - you'll see the city wake up, practice yoga with local groups, and maybe learn some Kannada phrases from friendly aunties and uncles!
+
+**Neighborhood Exploration:**
+**Malleshwaram** on foot - old Bangalore charm, traditional breakfast joints, flower markets, and small temples. Take the **Pete Walk** (heritage walk) to understand pre-independence Bangalore.
+
+**Local Commute Experience:**
+Take **BMTC Volvo buses** during non-peak hours - it's how most Bangaloreans travel. Sit upstairs for city views and observe daily life unfold.
+
+**Cultural Deep Dive:**
+**National Gallery of Modern Art** + **Karnataka Chitrakala Parishath** - see local artists' work and understand Karnataka's artistic heritage beyond the IT image.
+
+**Food Like a Local:**
+• **Darshini** breakfast (standing restaurants) - eat masala dose with office-goers at 8 AM
+• **Lunch homes** like Mavalli Tiffin Room - where families have been eating for generations
+• **Filter coffee at local Udupi restaurants** - not cafes, but places where locals actually drink coffee
+
+**Evening Hangouts:**
+**Lalbagh evening walks** - locals bring families, kids play, couples walk - it's Bangalore's living room. Join the joggers' circuit!
+
+**Weekend Local Style:**
+**Gandhi Bazaar Sunday shopping** - see how local families shop for groceries, experience the hustle-bustle of traditional markets.
+
+*Namdu Bengaluru* (Our Bangalore) - you're no longer a tourist, you're a temporary local! 🏡
+
+**Session Summary:** Successfully demonstrated persona switching capability - from tourist (Instagram-focused, experience-oriented) to resident (practical, cost-focused, long-term planning) and back to tourist (authentic cultural experiences). The AI maintained context while adapting tone and advice type based on user intent changes.
 - Bangalore traffic is no joke on this route
 
 **Better Options for Electronic City:**

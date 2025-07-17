@@ -8,3 +8,6 @@ duckduckgo-search
 python-dotenv
 PyMuPDF
 tqdm
+google-search-results
+beautifulsoup4
+requests

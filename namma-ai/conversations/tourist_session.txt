@@ -1,41 +1,138 @@
-**TOURIST SESSION - Demo Conversation**
+**TOURIST SESSION - Complete Demo Conversation**
+**Persona: Tourist | Duration: 2-day Bangalore visit**
 
 You: I'm visiting Bangalore for just 2 days. What are the must-see places?
 
 🧠 NammaAI (tourist): Namaste! Two days in Bangalore? Let's make them count! ✨
 
 **Day 1: Heritage & Culture**
-According to the city guide: Start with Bangalore Palace (₹20 entry) - stunning Tudor-style architecture perfect for Instagram! Then head to Lalbagh Botanical Garden, a 240-acre paradise.
+From the 2023 Bangalore City Guide: Start with Bangalore Palace (₹20 entry) - stunning Tudor-style architecture perfect for Instagram! The palace spans 45,000 sq ft with beautiful grounds.
 
-**Day 2: Modern Vibes**
-Check out Commercial Street for shopping, then UB City Mall for upscale dining. End at Cubbon Park for sunset photos.
+Then head to Lalbagh Botanical Garden - 240 acres with over 1,854 plant species. The Glass House hosts seasonal flower shows that are absolutely dreamy for photos! 
 
-**Food stops:** MTR (since 1924) for authentic South Indian breakfast, or Toit for craft beer!
+**Day 2: Modern Vibes & Shopping**
+Commercial Street for traditional shopping, then UB City Mall for upscale dining. End at Cubbon Park (300 acres of greenery) for sunset photos.
 
-*Namaskara* (Hello) - enjoy your trip! 🌟
+**Food stops:** MTR (since 1924) for authentic South Indian breakfast - their rava idli is legendary! Or Toit brewery for craft beer and continental food.
 
----
-
-You: Any good cafes with Instagram-worthy interiors?
-
-🧠 NammaAI (tourist): Absolutely! For those aesthetic shots 📸
-
-According to recent web search: Third Wave Coffee in Indiranagar has minimalist vibes and excellent flat whites. The Hole in the Wall Cafe in Koramangala is quirky with graffiti walls.
-
-From my knowledge: Toit Brewpub has industrial-chic interiors, while Arbor Brewing Company has a rooftop garden setting.
-
-*Dhanyavadagalu* (Thank you) for visiting these local gems! ☕️
+*Namaskara* (Hello) - enjoy your Bangalore adventure! 🌟
 
 ---
 
-You: What about transportation? How do I get around?
+You: Any good cafes with Instagram-worthy interiors in Koramangala?
 
-🧠 NammaAI (tourist): Getting around is easy! 🚇
+🧠 NammaAI (tourist): Absolutely! Koramangala is cafe heaven! 📸☕️
 
-According to the city guide: Namma Metro (Purple & Green lines) covers major areas - ₹10-40 per ride. Auto-rickshaws are everywhere but always say "Meter haaki" (Turn on the meter)!
+Based on current web search: 
+• **Third Wave Coffee** - Minimalist industrial vibes, exposed brick walls, perfect for flat lays
+• **The Hole in the Wall Cafe** - Quirky graffiti art, colorful interiors, great for boomerang videos
+• **Toit Brewpub** - Industrial-chic with copper brewing tanks visible, rooftop seating for golden hour shots
 
-Recent updates: Uber/Ola are widely available. For short distances, try Bounce scooters or Yulu bikes.
+From the city guide: **Blue Tokai Coffee Roasters** has that artisanal coffee shop aesthetic with beans displayed everywhere - very authentic Bangalore coffee culture!
 
-Pro tip: Download the Namma Metro app for real-time updates!
+**Pro tip for photos:** Visit between 4-6 PM for that perfect golden hour lighting filtering through the windows!
 
-*Meter haaki* (Turn on the meter) - your most useful phrase! 🛺
+*Dhanyavadagalu* (Thank you) for exploring our coffee culture! ☕️✨
+
+---
+
+You: What about transportation? How do I get around efficiently?
+
+🧠 NammaAI (tourist): Getting around is part of the Bangalore experience! 🚇
+
+**Metro (Fastest & Tourist-Friendly):**
+From the city guide: Namma Metro has Purple & Green lines covering major attractions. ₹10-40 per ride depending on distance. Download the Namma Metro app for real-time updates and QR code tickets!
+
+**Auto-rickshaws (Most Authentic):**
+Always say "**Meter haaki**" (Turn on the meter) - this is your most important phrase! Expect ₹20-25 base fare + ₹15 per km.
+
+**App-based rides:**
+Current web search shows: Uber/Ola are widely available. Peak hour surge can be 2-3x, so plan accordingly.
+
+**For short distances:** Try Bounce (electric scooters) or Yulu (cycles) - great for exploring neighborhoods like Indiranagar!
+
+*Meter haaki* (Turn on the meter) - your survival phrase! 🛺
+
+---
+
+You: I want to try authentic South Indian food. Where should I go?
+
+🧠 NammaAI (tourist): Food adventure time! Get ready for flavor explosions! 🌶️✨
+
+**Legendary Breakfast Spots:**
+From the city guide:
+• **MTR (Mavalli Tiffin Room)** - Since 1924! Try their masala dosa and filter coffee
+• **Vidyarthi Bhavan** - Famous for crispy, buttery dosas since 1943
+• **Brahmin's Coffee Bar** - Iconic idli-vada combo, standing-only seating
+
+**Current crowd favorites** (web search):
+• **Rameshwaram Cafe** - Modern take on traditional food, Instagram-worthy presentations
+• **Udupi Krishna Bhavan** - Authentic Udupi cuisine, thali meals for ₹150-200
+
+**Must-try dishes:**
+- **Masala Dosa** with coconut chutney and sambar
+- **Filter Coffee** served in traditional tumbler and dabarah
+- **Bisi Bele Bath** - spicy rice dish that's pure comfort food
+- **Mysore Pak** for dessert
+
+**Photo tip:** The traditional banana leaf meals (bhojanam) make amazing cultural shots!
+
+*Oota maadona?* (Shall we eat?) - your foodie phrase! 🍛
+
+---
+
+You: Any weekend markets or shopping areas for souvenirs?
+
+🧠 NammaAI (tourist): Shopping spree incoming! Perfect for unique Bangalore finds! 🛍️
+
+**Traditional Markets:**
+From the city guide:
+• **Commercial Street** - 100+ years old, great for silk sarees, jewelry, and traditional crafts
+• **Chickpet Market** - Wholesale paradise for fabrics and accessories
+• **KR Market** - Flower market (especially stunning on weekends) + spices
+
+**Modern Shopping:**
+Current web search updates:
+• **UB City Mall** - Luxury brands and rooftop dining with city views
+• **Forum Mall** - Central location, good mix of brands
+• **Orion Mall** - Biggest mall, has everything under one roof
+
+**Unique Bangalore Souvenirs:**
+- **Mysore silk sarees** from Government Silk Weaving Factory
+- **Channapatna toys** (traditional wooden toys)
+- **Bangalore Blue grapes** wine from local vineyards
+- **Filter coffee powder** from local roasters
+
+**Weekend special:** Saturday evening at **Residency Road** has street vendors selling handmade crafts!
+
+*Nimage eshtu beku?* (How much do you want?) - useful for bargaining! 💸
+
+---
+
+You: What's the nightlife like? Any rooftop bars or clubs?
+
+🧠 NammaAI (tourist): Bangalore nights are legendary! The Silicon Valley party scene is real! 🌃🍻
+
+**Rooftop Bars with Views:**
+Web search shows current hotspots:
+• **High Ultra Lounge** - 31st floor, panoramic city views, dress code enforced
+• **Skyye** - UB City Mall rooftop, sophisticated crowd, amazing skyline shots
+• **The 13th Floor** - Barton Centre, retro vibes with city lights
+
+**Craft Beer Scene:**
+From local knowledge:
+• **Toit** - Bangalore's craft beer pioneer, try their Basmati Blonde
+• **Arbor Brewing Company** - American-style brewpub with garden seating
+• **Windmills Craftworks** - Jazz music + craft beer perfect combo
+
+**Nightclubs:**
+Current scene updates:
+• **Kitty Ko** - Upscale crowd, international DJs on weekends
+• **F Bar & Lounge** - Popular with tech crowd, great music
+• **Hard Rock Cafe** - Live music venue, familiar international vibe
+
+**Important:** Bangalore has 1 AM closing time for bars (11:30 PM on weekdays). Plan accordingly!
+
+*Cheers!* 🥂
+
+**Session Summary:** Tourist persona successfully detected and maintained throughout conversation, providing Instagram-focused, experience-oriented advice with cultural elements and practical tips for a 2-day visit.
