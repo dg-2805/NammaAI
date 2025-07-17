@@ -15,16 +15,16 @@
 
 Bangalore visitors and new residents face different challenges:
 
-* **Tourists**: Need quick, fun recommendations for short stays
-* **New Residents**: Require practical, long-term living advice
+* **Tourists**: Need quick, fun recommendations for short stays  
+* **New Residents**: Require practical, long-term living advice  
 * **Both**: Need up-to-date, reliable information
 
 ---
 
 ## 👤 Personas Handled
 
-* **Tourist**: Short visits, attractions, food, Instagram-friendly spots
-* **New Resident**: Relocation advice, rent, commute, utilities
+* **Tourist**: Short visits, attractions, food, Instagram-friendly spots  
+* **New Resident**: Relocation advice, rent, commute, utilities  
 * **Auto-detection**: Switches personas based on input
 
 ---
@@ -33,29 +33,29 @@ Bangalore visitors and new residents face different challenges:
 
 ### 🤖 Agno Framework Integration
 
-* Built on Agno's `Agent` class
-* Enhanced context & session analytics
-* Persistent conversation memory
+* Built on Agno's `Agent` class  
+* Enhanced context & session analytics  
+* Persistent conversation memory  
 
 ### 🔍 Intelligent Persona Detection
 
-* Rule-based keywords (`persona.py`)
-* LLM fallback via Gemini (`llm_wrapper.py`)
-* Explicit commands ("switch to tourist mode")
-* Session memory using Agno context
+* Rule-based keywords (`persona.py`)  
+* LLM fallback via Gemini (`llm_wrapper.py`)  
+* Explicit commands ("switch to tourist mode")  
+* Session memory using Agno context  
 
 ### 📚 Hybrid Knowledge System
 
-* **PDF-based RAG**: 2023 Bangalore City Guide
-* **Web search augmentation** via SerpAPI
-* Smart routing between PDF/Web
-* Conflict handling & source attribution
+* **PDF-based RAG**: 2023 Bangalore City Guide  
+* **Web search augmentation** via SerpAPI  
+* Smart routing between PDF/Web  
+* Conflict handling & source attribution  
 
 ### 🎝️ Persona-Adapted Responses
 
-* Tourist: Concise, fun, Insta-ready
-* Resident: Practical, detailed, cost-aware
-* Kannada phrases with translations
+* Tourist: Concise, fun, Insta-ready  
+* Resident: Practical, detailed, cost-aware  
+* Kannada phrases with translations  
 
 ---
 
@@ -64,76 +64,123 @@ Bangalore visitors and new residents face different challenges:
 ### Agno Agent Flow
 
 ```
+
 User Input → Agno Agent → Persona Detection → Context Management → Response Generation → Session Tracking
+
 ```
 
 ### Retrieval Augmented Generation (RAG)
 
 ```
+
 PDF → Text → Chunking (750c, 100o) → HuggingFace Embeddings → ChromaDB → Semantic Search
+
 ```
 
 ### Web Search
 
-* Triggers on dynamic keywords ("price", "today")
-* SerpAPI for scraping + summarizing
+* Triggers on dynamic keywords ("price", "today")  
+* SerpAPI for scraping + summarizing  
 * Food queries routed to Zomato, Swiggy, etc.
 
-### Source Blending Logic
+---
 
-1. Always query PDF
-2. Trigger web if dynamic keyword present
-3. Blend PDF (stable) + Web (dynamic)
-4. If conflict, mention both
+## 🧠 Behind the Scenes: Decision Making
 
-### Persona Detection Logic
+### 👤 Persona Detection
 
 ```
-Input → Rules → Gemini LLM → Explicit Commands → Memory Update
+
+User Input → Rules (persona.py) → Gemini fallback → Explicit command → Agno session memory
+
 ```
+
+- **Rule-based detection**: Uses keyword heuristics (e.g., "I'm visiting" → Tourist).  
+- **LLM fallback**: If rules are inconclusive, Gemini classifies the input contextually.  
+- **Explicit switching**: Commands like `"switch to resident mode"` override all detection.  
+- **Session memory**: Persona is stored in Agno's context and reused across turns.
+
+---
+
+### 🔍 RAG vs Web Search Decision Tree
+
+```
+
+Always query PDF
+↓
+If dynamic keywords detected (e.g., "today", "price", "weather") → Trigger web search
+↓
+Gemini blends PDF + Web content for answer generation
+↓
+If conflict → Mention both sources with attribution
+↓
+If LLM unavailable → Use PDF fallback only
+
+```
+
+- The **PDF guide** is the default, trusted source for stable, local knowledge.  
+- **Web search** is only triggered for time-sensitive or real-time queries.  
+- Gemini blends both sources to ensure reliable yet up-to-date responses.
+
+---
+
+### ⚖️ Conflict Resolution Strategy
+
+When PDF and web info differ:
+
+- **PDF takes priority** if the information is long-term or factual (e.g., transport zones, area names).  
+- **Web data is prioritized** for time-sensitive topics (e.g., rent trends, weather, events).  
+- If conflicting, both sources are shown with attribution. For example:
+
+  > "According to the city guide, rent in Koramangala averages ₹25K.  
+  > However, current listings suggest it may spike to ₹30K this month."
+
+- Gemini flags possible inconsistencies and tries to preserve user trust with clarity.
 
 ---
 
 ## 🚀 Tech Stack
 
-* **Agno Agent Framework**
-* **Google Gemini (via LangChain)**
-* **ChromaDB** (Vector Store)
-* **HuggingFace Embeddings**
-* **SerpAPI** (Live web)
-* **PyMuPDF** for PDF parsing
+* **Agno Agent Framework**  
+* **Google Gemini (via LangChain)**  
+* **ChromaDB** (Vector Store)  
+* **HuggingFace Embeddings**  
+* **SerpAPI** (Live web)  
+* **PyMuPDF** for PDF parsing  
 
 ---
 
 ## 📁 Project Structure
 
 ```
+
 namma-ai/
 ├── agent/
 │   ├── agent.py            # Orchestrates logic
 │   ├── persona.py          # Rule-based detection
 │   ├── retriever.py        # RAG implementation
 │   ├── prompts.py          # Templates
-│   ├── web_search.py       # SerpAPI integration
-│   ├── llm_wrapper.py      # Gemini interface
+│   ├── web\_search.py       # SerpAPI integration
+│   ├── llm\_wrapper.py      # Gemini interface
 │   └── utils.py            # PDF processing
 ├── data/
-│   ├── bangalore_guide.pdf
-│   ├── bangalore_guide.txt
+│   ├── bangalore\_guide.pdf
+│   ├── bangalore\_guide.txt
 │   ├── sessions.json
-│   └── vector_store/
+│   └── vector\_store/
 ├── conversations/
-│   ├── tourist_session.txt
-│   ├── resident_session.txt
-│   └── persona_switch.txt
-├── namma_agent.py          # Agno-powered entry
+│   ├── tourist\_session.txt
+│   ├── resident\_session.txt
+│   └── persona\_switch.txt
+├── namma\_agent.py          # Agno-powered entry
 ├── main.py                 # Stateless CLI
-├── main_with_sessions.py   # Session token support
-├── session_manager.py      # File-based persistence
+├── main\_with\_sessions.py   # Session token support
+├── session\_manager.py      # File-based persistence
 ├── requirements.txt
 ├── prompts.md              # Prompt logic
 └── README.md               # This file
-```
+
+````
 
 ---
 
@@ -143,7 +190,7 @@ namma-ai/
 
 ```bash
 pip install -r requirements.txt
-```
+````
 
 ### 2. Add API Keys in `.env`
 
@@ -178,7 +225,7 @@ python main.py  # Stateless demo
 I'm visiting Bangalore for 2 days
 ```
 
-*"Day 1: Bangalore Palace + Lalbagh. Day 2: Commercial Street + brewery! *Namaskara* (Hello!)"*
+*"Day 1: Bangalore Palace + Lalbagh. Day 2: Commercial Street + brewery! *Namaskara* (Hello!)*"
 
 **Resident**:
 
@@ -186,7 +233,7 @@ I'm visiting Bangalore for 2 days
 I'm moving to Bangalore for work
 ```
 
-*"₹25-35K/month for 2BHK. Avoid cross-city commute. *Dhanyavadagalu* (Thanks!)"*
+*"₹25-35K/month for 2BHK. Avoid cross-city commute. *Dhanyavadagalu* (Thanks!)*"
 
 **Switching**:
 
@@ -228,63 +275,87 @@ switch to tourist mode
 **Built with ❤️ for Namma Bengaluru.**
 *Namma Bengaluru. Namma AI!*
 
+---
+
 ## Features
-- Persona-aware answers for tourists and residents
-- PDF (city guide) as primary knowledge source, web search as supplement
-- Real-time weather integration (see below)
-- Kannada phrases in all responses (including fallback)
-- "Bangalore Survival Kit" and other special tips
-- Robust fallback logic if LLM is unavailable
+
+* Persona-aware answers for tourists and residents
+* PDF (city guide) as primary knowledge source, web search as supplement
+* Real-time weather integration (see below)
+* Kannada phrases in all responses (including fallback)
+* "Bangalore Survival Kit" and other special tips
+* Robust fallback logic if LLM is unavailable
+
+---
 
 ## Usage
 
 ### Standard CLI
-Run:
-```
+
+```bash
 python main.py
 ```
 
 ### CLI with Real-Time Weather
-Run:
-```
+
+```bash
 python main_weather.py
 ```
 
 #### Weather API Setup
-- Get a free API key from [OpenWeatherMap](https://openweathermap.org/api)
-- Set your API key in your environment:
-  - **Linux/macOS:**
-    ```
-    export OPENWEATHER_API_KEY=your_api_key_here
-    ```
-  - **Windows CMD:**
-    ```
-    set OPENWEATHER_API_KEY=your_api_key_here
-    ```
-  - **Windows PowerShell:**
-    ```
-    $env:OPENWEATHER_API_KEY="your_api_key_here"
-    ```
-- The agent will automatically blend real-time weather info into answers if your query is about weather, rain, temperature, etc.
+
+* Get a free API key from [OpenWeatherMap](https://openweathermap.org/api)
+* Set your API key in your environment:
+
+**Linux/macOS:**
+
+```bash
+export OPENWEATHER_API_KEY=your_api_key_here
+```
+
+**Windows CMD:**
+
+```cmd
+set OPENWEATHER_API_KEY=your_api_key_here
+```
+
+**Windows PowerShell:**
+
+```powershell
+$env:OPENWEATHER_API_KEY="your_api_key_here"
+```
+
+* The agent will automatically blend real-time weather info into answers if your query is about weather, rain, temperature, etc.
+
+---
 
 ### Special Features
-- **Kannada phrases:** Every answer (including fallback) ends with a Kannada phrase and translation.
-- **Bangalore Survival Kit:** Ask for "survival kit" to get a summary of essential tips for new arrivals.
-- **Fallbacks:** If the LLM (Gemini) is unavailable, you get a concise, relevant extract from the city guide, not a generic error.
-- **Web search:** For current/dynamic info, web search is triggered and blended with PDF info by the LLM.
+
+* **Kannada phrases:** Every answer (including fallback) ends with a Kannada phrase and translation.
+* **Bangalore Survival Kit:** Ask for "survival kit" to get a summary of essential tips for new arrivals.
+* **Fallbacks:** If the LLM (Gemini) is unavailable, you get a concise, relevant extract from the city guide, not a generic error.
+* **Web search:** For current/dynamic info, web search is triggered and blended with PDF info by the LLM.
+
+---
 
 ### Example Queries
-- "Tell me about Lalbagh Botanical Garden"
-- "How to negotiate with auto rickshaw drivers?"
-- "What's the weather in Bangalore today?"
-- "Give me a Bangalore survival kit"
-- "Any tech meetups in Bangalore this week?"
+
+* "Tell me about Lalbagh Botanical Garden"
+* "How to negotiate with auto rickshaw drivers?"
+* "What's the weather in Bangalore today?"
+* "Give me a Bangalore survival kit"
+* "Any tech meetups in Bangalore this week?"
+
+---
 
 ## Developer Notes
-- All entry points use the same core agent logic for consistency.
-- To add more special commands, see the start of `generate_response` in `agent/agent.py`.
-- For fallback logic, see the end of `generate_response` in `agent/agent.py`.
+
+* All entry points use the same core agent logic for consistency.
+* To add more special commands, see the start of `generate_response` in `agent/agent.py`.
+* For fallback logic, see the end of `generate_response` in `agent/agent.py`.
 
 ---
 
 For more details, see the code and comments in the `namma-ai/` directory.
+
+```
