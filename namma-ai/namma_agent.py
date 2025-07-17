@@ -31,26 +31,31 @@ class NammaAIAgent(Agent):
         Returns:
             Detected persona: 'tourist', 'resident', 'ambiguous', or 'unknown'
         """
-        # First, check for explicit persona switching
-        explicit_switch = explicit_persona_switch(message)
-        if explicit_switch:
-            return explicit_switch
+        try:
+            # First, check for explicit persona switching
+            explicit_switch = explicit_persona_switch(message)
+            if explicit_switch:
+                return explicit_switch
+                
+            # Use existing rule-based detection
+            detected_persona = detect_persona(message)
             
-        # Use existing rule-based detection
-        detected_persona = detect_persona(message)
-        
-        # If unknown, fall back to LLM detection
-        if detected_persona == "unknown":
-            detected_persona = llm_detect_persona(message)
+            # If unknown, fall back to LLM detection
+            if detected_persona == "unknown":
+                detected_persona = llm_detect_persona(message)
+                
+            # Store detection result in agno context for tracking
+            context['last_persona_detection'] = {
+                'message': message,
+                'detected': detected_persona,
+                'method': 'rule-based' if detected_persona != 'unknown' else 'llm-fallback'
+            }
             
-        # Store detection result in agno context for tracking
-        context['last_persona_detection'] = {
-            'message': message,
-            'detected': detected_persona,
-            'method': 'rule-based' if detected_persona != 'unknown' else 'llm-fallback'
-        }
-        
-        return detected_persona
+            return detected_persona
+            
+        except Exception as e:
+            print(f"Error in persona detection: {e}")
+            return "unknown"
 
     def on_message(self, message: str, context: dict) -> str:
         """
@@ -64,62 +69,67 @@ class NammaAIAgent(Agent):
         Returns:
             Generated response from NammaAI system
         """
-        # Initialize context if new session
-        if not context.get('initialized'):
-            context['initialized'] = True
-            context['conversation_history'] = []
-            context['persona'] = None
-            context['session_stats'] = {
-                'total_messages': 0,
-                'persona_switches': 0,
-                'web_searches_triggered': 0
+        try:
+            # Initialize context if new session
+            if not context.get('initialized'):
+                context['initialized'] = True
+                context['conversation_history'] = []
+                context['persona'] = None
+                context['session_stats'] = {
+                    'total_messages': 0,
+                    'persona_switches': 0,
+                    'web_searches_triggered': 0
+                }
+            
+            # Update session statistics
+            context['session_stats']['total_messages'] += 1
+            
+            # Enhanced persona detection using agno + existing logic
+            session_persona = context.get('persona')
+            detected_persona = self.detect_user_persona(message, context)
+            
+            # Track persona switches
+            if detected_persona != "unknown" and detected_persona != session_persona:
+                context['session_stats']['persona_switches'] += 1
+                session_persona = detected_persona
+                context['persona'] = session_persona
+                
+            # Get conversation history
+            conversation_history = context.get('conversation_history', [])
+            
+            # Generate response using existing NammaAI logic
+            response, final_persona = generate_response(
+                message, 
+                session_persona, 
+                conversation_history
+            )
+            
+            # Update conversation history
+            conversation_history.append(f"User: {message}")
+            conversation_history.append(f"AI: {response}")
+            
+            # Keep only last 6 exchanges to manage context size
+            if len(conversation_history) > 6:
+                conversation_history = conversation_history[-6:]
+                
+            context['conversation_history'] = conversation_history
+            
+            # Update persona if it changed during response generation
+            if final_persona != session_persona and final_persona != "unknown":
+                context['persona'] = final_persona
+                
+            # Store enhanced response metadata in agno context
+            context['last_response_metadata'] = {
+                'persona_used': final_persona,
+                'message_length': len(response),
+                'conversation_turn': len(conversation_history) // 2
             }
-        
-        # Update session statistics
-        context['session_stats']['total_messages'] += 1
-        
-        # Enhanced persona detection using agno + existing logic
-        session_persona = context.get('persona')
-        detected_persona = self.detect_user_persona(message, context)
-        
-        # Track persona switches
-        if detected_persona != "unknown" and detected_persona != session_persona:
-            context['session_stats']['persona_switches'] += 1
-            session_persona = detected_persona
-            context['persona'] = session_persona
             
-        # Get conversation history
-        conversation_history = context.get('conversation_history', [])
-        
-        # Generate response using existing NammaAI logic
-        response, final_persona = generate_response(
-            message, 
-            session_persona, 
-            conversation_history
-        )
-        
-        # Update conversation history
-        conversation_history.append(f"User: {message}")
-        conversation_history.append(f"AI: {response}")
-        
-        # Keep only last 6 exchanges to manage context size
-        if len(conversation_history) > 6:
-            conversation_history = conversation_history[-6:]
+            return response
             
-        context['conversation_history'] = conversation_history
-        
-        # Update persona if it changed during response generation
-        if final_persona != session_persona:
-            context['persona'] = final_persona
-            
-        # Store enhanced response metadata in agno context
-        context['last_response_metadata'] = {
-            'persona_used': final_persona,
-            'message_length': len(response),
-            'conversation_turn': len(conversation_history) // 2
-        }
-        
-        return response
+        except Exception as e:
+            print(f"Error in on_message: {e}")
+            return "I apologize, but I encountered an error processing your message. Please try again."
     
     def get_session_summary(self, context: dict) -> dict:
         """
@@ -143,7 +153,7 @@ class NammaAIAgent(Agent):
 
 def run_cli():
     """
-    Enhanced CLI interface with agno integration and session management.
+    Enhanced CLI interface with agno integration and automatic persona detection.
     """
     agent = NammaAIAgent()
     context = {}
@@ -152,14 +162,13 @@ def run_cli():
     print("=" * 60)
     print("👋 Welcome! I can help you as a tourist or new resident.")
     print("💡 Try: 'I'm visiting for the weekend' or 'I'm moving here for work'")
-    print("🔄 Type 'switch to tourist mode' or 'switch to resident mode' to change persona")
-    print("📊 Type 'session info' for session statistics")
+    print("Type 'session info' for session statistics")
     print("❌ Type 'quit' to exit")
     print("=" * 60)
     
     while True:
         try:
-            user_input = input("\n🗣️  You: ").strip()
+            user_input = input("\nYou: ").strip()
             
             if user_input.lower() in ['quit', 'exit', 'bye']:
                 summary = agent.get_session_summary(context)
@@ -183,10 +192,10 @@ def run_cli():
                 
             # Process message through agno agent
             response = agent.on_message(user_input, context)
-            
-            # Display response with persona indicator
-            current_persona = context.get('persona', 'unknown')
-            print(f"\n🧠 NammaAI ({current_persona}): {response}")
+            # Display response with persona like main.py
+            current_persona = context.get('persona', None)
+            detected = current_persona if current_persona and current_persona != 'unknown' else 'unknown'
+            print(f"\n🧠 NammaAI ({detected}): {response}")
             
         except KeyboardInterrupt:
             print("\n\n👋 Goodbye!")

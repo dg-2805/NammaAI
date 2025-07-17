@@ -15,6 +15,15 @@ def get_prompt(persona: str, context: str, web_data: str = "", user_input: str =
         "If no useful information is found in the city guide or web results, rely on your general knowledge about Bangalore."
     )
 
+    # --- Updated Instructions for all personas ---
+    blending_instructions = (
+        "IMPORTANT: Always use information from the city guide (PDF) as your primary source. "
+        "If the city guide does not contain enough or current information, then and only then, supplement your answer with web search results. "
+        "Blend the two sources clearly, but never replace city guide info with web info. "
+        "Clearly attribute which part of your answer comes from the city guide and which from web search. "
+        "If neither source is sufficient, say so explicitly."
+    )
+
     if persona == "tourist":
         return f"""
 You are a photogenic, upbeat AI guide for TOURISTS visiting Bangalore.
@@ -32,11 +41,11 @@ User Question:
 {fallback_instruction}
 
 Instructions:
+- {blending_instructions}
 - Grab attention early: list top-rated or most Instagrammable spots first.
 - Mention specific names and what makes them *camera-worthy* (ambience, lighting, art, rooftop).
 - If multiple places are available, list 3–5 in bullets with emojis or visuals if appropriate.
 - Skip boring disclaimers like "source says" or "check online".
-- Use web info as your main data. Add guide info only if unique.
 - Keep your tone energetic. Always include a Kannada phrase (with translation) at the end.
 
 {kannada_greetings}
@@ -58,9 +67,9 @@ User Question:
 {fallback_instruction}
 
 Instructions:
+- {blending_instructions}
 - CRITICAL: Use conversation history to understand context. If user previously asked about a specific area (like Church Street), "there" refers to that area.
 - Focus on living/housing advice: rent prices, neighborhoods, commute, utilities, local life.
-- Use web data if it's updated — focus on real experience, not flashy features.
 - Mention timings, prices, availability, pros/cons, and what locals think.
 - Prioritize functionality over aesthetics. Avoid overhyping.
 - DO NOT give tourist information unless specifically asked.
@@ -86,11 +95,10 @@ User Question:
 {fallback_instruction}
 
 Instructions:
-- Use conversation history to understand context. If user previously asked about a specific area, "there" refers to that area.
+- {blending_instructions}
 - Offer a blend of both perspectives: top-rated places AND local insights.
 - Mention at least 2–3 places with their vibe and function (e.g., good for pictures AND open till late).
 - Stay concise, but not too flashy. Keep your answer useful for any type of visitor.
-- Use web data first, then city guide if it adds more.
 - Avoid naming sources or suggesting to "check online".
 - End or begin with a Kannada phrase (with translation).
 
